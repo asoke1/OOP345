@@ -1,0 +1,41 @@
+// Workshop 1 - Linkage, Storage Duration, Namespaces, and OS Interface
+// reflect.txt
+// Abiodun Oke
+// 2019/01/20
+
+
+Compilation
+	I have learn how to modularizing code,
+	declare and define your class in my header file
+	and implement those classes within my .cpp file,
+	how to improves debugging time and keeps my code organized,
+	* pre-processor creates seperate translation unit by inserting header files and expanding macros, from each translation unit, compiler creates seperate binary file, then from the binary files from translation units and the binary files from libraries used in the code, the linker makes a file called a "relocatable", this is usually what you execute to start the application
+Namespaces
+	I have learn how to expose everything within a namespace: using namespace sict, 
+	expose a single element within a namespace: using namespaceName::; ,
+	use class elements within namespaces whenever you need them: namespace::String::;
+
+The difference between internal and external linkage
+ Internal linkage
+	An identifier implementing internal linkage is not accessible outside the translation unit it is declared in. 
+	Any identifier within the unit can access an identifier having internal linkage. It is implemented by the keyword static.
+	example in //String.cpp
+		static int itemNumber = INITIAL;
+ external linkage
+	while external linkage an identifier implementing external linkage is visible to every translation unit. Externally linked 
+	identifiers are shared between translation units and are considered to be located at the outermost level of the program
+	example in //String.cpp
+	extern int INITIAL;
+
+•	the execution effect of the code in the process() function that creates the String object which is inserted into standard output
+	 (which member function(s) does this code call)
+	The member function that does the code call is one-argument constructor 
+
+•	the changes that you made in upgrading your String class.
+	I declare const int max for char length and increase it. 
+
+
+		QUIZE
+no quiz yet.
+
+

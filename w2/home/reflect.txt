@@ -1,0 +1,29 @@
+// Workshop 2 - Copy and Move Semantics
+// reflect.txt
+// Abiodun Oke
+// 2019/01/25
+
+Reflection 
+What I learn:
+•	subobject:
+ 	Any object that is stored within another object (array elements, base class objects and data member objects).
+
+•	the reason for the difference between the copy and move operations
+	goal of the copy constructor and copy assignment is to make a copy of one object to another,
+	the goal of the move constructor and move assignment is to move ownership of the resources from one object to another 
+	(which is much less expensive than making a copy and faster because is only moving the exact size).
+
+•	the dynamic allocation of addresses to objects instead of objects themselves
+	because dynamic memory  happens at runtime in the exact match period. It doesn’t have to have a name only a pointer to link to the memory. If the memory stored in the pointer is called only the memory is used.
+
+•	the changes you made in upgrading your w2 and Text modules.
+	The upgrading I made is to add move constructor and move operator only to compare where one is faster. 
+	Text(Text&&);
+	sText& operator=(Text&&);
+	
+
+	Quiz 2
+1. a
+2. b
+6. a
+ 

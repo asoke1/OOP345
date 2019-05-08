@@ -1,0 +1,56 @@
+// Workshop 3 - Templates
+// Reflect.txt
+// Abiodun Oke
+// 2019/02/05
+
+			Reflection
+To concatenate the string, we need to specialize the sum() function because the original sum() expects 
+		it to be a number that's why we need to specialize it in order to handle strings. Therefore, 
+		I coded the definition of member function sum() as 
+       
+		V sum(const L& label, const V& sum) const
+		{
+			return (label == LVPair<L, V>::getLabel()) ? LVPair<L, V>::getValue() + sum : sum;
+
+		}
+	and also ensure the type with the additional statements as 
+
+	template<>
+	std::string SummableLVPair<std::string, std::string>::sum(const std::string& s1, const std::string& s2) const
+	{
+		return (s1 == LVPair<std::string, std::string>::getLabel()) ? (s2 + " " + LVPair<std::string, std::string>::getValue()) : s2;
+	}
+
+
+we can make sure the type that passing the function sum() is the string and can be concatenated with 
+	sum(const std::string& label, const std::string&value)
+
+We should specialize the initial value for the proper summation between different types. When the accepted value as a string, 
+	the initial value should be considered as string type. So, it has to be initialized to an empty string. The template statement for the string type is like
+
+	template<>
+	std::string SummableLVPair<std::string, std::string>::initValSum = "";
+
+In another case, if the value is accepted as int, it should be initialized as 
+
+	template<>
+	int SummableLVPair<std::string, int>::initValSum = 0;
+
+Therefore, specializing the initial value is necessary for the different types.
+
+
+
+
+For example, the value of the "min_width" has to be the same and also has not to get leverage after class derived, so I declared "min_width" as static. To be the same, and share the value for all, the "min_width" should be defined outside the class for the organized output.
+
+	template<typename L, typename V>
+	size_t SummableLVPair<L, V>::minWidth = 0u;
+
+
+
+In the other case, "size_t arrNum = 0;;" which is in the "List.h" was not defined outside the class because 
+	the number of the array doesn't need to be static and(not to be same for all), so it can be defined inside the class.
+
+
+		Quize
+100%
